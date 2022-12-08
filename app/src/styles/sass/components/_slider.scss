@@ -1,0 +1,117 @@
+.slider {
+    width: 100%;
+    height: 80%;
+    position: relative;
+    
+    &__slides {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    &__slide {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        padding: 0 2rem;
+
+        &__alignment {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            transition: transform 1500ms ease-in-out;
+        }
+    }
+
+    &__image {
+        height: 100%;
+        max-width: 100%;
+        position: absolute;
+        left: 50%;
+        object-fit: contain;
+        transform: translateX(-50%);
+
+        @include respond(tab-land) {
+            height: 100%;
+            
+           
+        }
+    }
+
+    &__arrow {
+        //position
+        position: absolute;
+        z-index: 20;
+        top: 50%;
+        transform: translateY(-50%) scale(1);
+
+        // style
+        height: 10rem;
+        width: 10rem;
+        border-radius: 50%;
+        text-align: center;
+        background-color: rgba($white, .6); 
+        border: 0;      
+
+        //transition
+        transition-property: opacity, transform;
+        transition-duration: 300ms;
+        transition-timing-function: ease-in-out; 
+
+        
+
+
+        @include respond(tab-port) {
+            height: 8rem;
+            width: 8rem;
+        }
+
+        @include respond(phone) {
+            height: 6rem;
+            width: 6rem;
+        }
+        
+        & > p {
+            font-size: 4rem;
+            font-weight: 400;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+
+            & > svg {
+                fill: rgba($gray, .9);
+                transform: translate(-50%, -50%);
+                position: absolute;
+                top: 50%;
+            }
+    
+            @include respond(phone) {
+                font-size: 2rem;
+            }
+        }
+
+        &:hover {
+            transform: translateY(-50%) scale(1.1);
+            cursor: pointer;
+            opacity: 80%;
+        }
+
+        &--prev {
+            left: 0;
+
+            @include respond(tab-port) {
+                left: 1rem;
+            }
+        }
+
+        &--next {
+            right: 0;
+
+            @include respond(tab-port) {
+                right: 1rem;
+            }
+        }
+    }
+}
+

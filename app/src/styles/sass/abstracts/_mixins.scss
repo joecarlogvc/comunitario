@@ -1,0 +1,43 @@
+/*
+MEDIA @QUERY MANAGER
+
+Main breakpoints argument choices:
+
+0px - 600px       40em      :   Phone and Small Phones 
+600px - 900px     60em      :   Tablet Portrait
+900px - 1200px    80em      :   Tablet Landscape
+[1200px - 1800px  120em     :   Built]
+1800px - ++       > 120em   :   Big Desktop
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 40em) {
+            @content;
+        };
+    }; 
+
+    @if $breakpoint == tab-port {
+        @media (max-width: 60em) {
+            @content;
+        };
+    };
+
+    @if $breakpoint == tab-land {
+        @media (max-width: 80em) {
+            @content;
+        };
+    };
+
+    @if $breakpoint == desk {
+        @media (max-width: 120em) {
+            @content;
+        };
+    };
+
+    @if $breakpoint == bigDesk {
+        @media (min-width: 120em){
+            @content;
+        };
+    };
+};

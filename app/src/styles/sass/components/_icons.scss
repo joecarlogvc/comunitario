@@ -1,0 +1,12 @@
+.svg {
+    &--regular {
+        font-size: 1.4rem;
+    }
+    
+    &--small {
+        height: 1.2rem;
+        width: 1.2rem;
+        font-size: 1.2rem;
+        font-weight: 400;
+    }    
+}

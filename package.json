@@ -1,0 +1,22 @@
+{
+  "name": "comunitario_wp",
+  "version": "1.0.0",
+  "description": "Este desarrollo tiene como intención lanzar a la marca de arquitectos comunitario a el mercado digita, dando a conocer sus obras y soluciones, así como su visión de a donde quieren llevar la arquitectura. ",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass app/src/styles/sass/main.scss app/public/styles.css -w"
+  },
+  "keywords": [
+    "comunitario",
+    "arquitectura",
+    "estudio",
+    "de",
+    "arquitectos",
+    "urbanismo."
+  ],
+  "author": "Studio64 by SI&CG,SC. - Joecarlo González",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^7.0.3"
+  }
+}

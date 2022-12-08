@@ -1,0 +1,73 @@
+html {
+    font-size: 10px;
+
+    @include respond(phone) {
+        font-size: 9px;
+    }
+
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: $black;
+}
+
+.heading {
+    font-weight: 400;
+}
+
+.heading--2 {
+    font-size: 4rem;
+
+    // @include respond(tab-port) {
+    //     font-size: 3rem;
+    // }
+}
+
+.heading--4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.heading--5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    @include respond(tab-port) {
+        font-size: 1.1rem;
+    }
+
+    @include respond(phone) {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+}
+
+.heading--6 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.section__heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+
+    &--en {
+        font-weight: 400;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-color: $gray;
+        -webkit-text-stroke-width: 1px;
+    }
+}
+
+.ln--en {
+    color: $gray;
+}
+
+.active {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: block;
+}
