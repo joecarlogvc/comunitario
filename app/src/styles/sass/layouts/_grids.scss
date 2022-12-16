@@ -6,7 +6,24 @@
 }
 
 .grid--4w {
+    //for cards in news section
+   
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     column-gap: 20rem;
+
+    @include respond(tab-land) {
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+        column-gap: 12rem;
+    }
+
+    
+    @include respond(tab-port) {
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        column-gap: 10rem;
+    }
+
+    @include respond(phone) {
+        column-gap: 4rem;
+    }
 }
 

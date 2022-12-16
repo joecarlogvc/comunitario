@@ -6,6 +6,7 @@
 
     @include respond(tab-land) {
         width: calc(100% - 20rem);
+        margin-top: 10rem;
     }
 
     @include respond(tab-port) {
@@ -17,50 +18,69 @@
 
 //----------------------- WELCOME section starts here -----------------------------
 .section--welcome {
-    margin-top: 19rem;
-    height: calc(100vh - 19rem);
-    padding-bottom: 0;
+    margin-top: 19rem !important;
+    height: calc(100vh - 19rem) !important;
+    padding-bottom: 0 !important;
 
     @include respond(tab-land) {
-        height: 80vh;
+        height: 90vh !important;
     }
 
     @include respond(tab-port) {
-        margin-top: 10rem;
+        margin-top: 10rem !important;
         // height: calc(80vh - 10rem);
     }
 
     @include respond(phone) {
-        height: 70vh;
+        height: 70vh !important;
     }
 }
 
 //*********************** WELCOME section ends here ***************************** 
 
 //----------------------- ABOUT section starts here -----------------------------
+
+.section--about {
+    @include respond(tab-port) {
+        padding: 0 4rem;
+    }
+}
+
 .about {
     
     &__content{
+        position: relative;
         width: 100%;
-        padding: 0 2rem;
-        display: grid;
-        grid-auto-flow: column;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-direction: row;
         gap: 4rem;
 
-        @include respond(tab-port) {
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(2, 1fr);
+
+        @include respond(tab-land) {
+            flex-direction: column-reverse;
         }
     }
 
     &__info {
         height: 100%;
-        border-top: solid 1px $gray;
-        padding-top: 2rem;
+        max-width: 50%;
+
+
+        @include respond(tab-land) {
+            max-width: 100%;
+        }
 
         &__headings {
             margin-bottom: 10rem;
+            transition: font-size 1000ms ease;
+
+            @include respond(phone) {
+                margin-bottom: 6rem;
+            }
+
+            & > h5 {
+                margin-bottom: 1rem;
+            }
         }
         
         &__text {
@@ -76,45 +96,47 @@
     &__team {
 
         &__fullteam {
-            display: none;
             height: 100%;
-            width: 100%;              
+            width: 100%;
+            opacity: 0;
+            z-index: 1;
+            display: none;              
         }
 
         &__team-img {
             height: 100%;
             width: 100%;
-            background-position: center;
+            background-position: bottom;
             object-fit: cover;
         }
 
         &__members {
-            //display: none;
-            height: 100%;
-            max-width: 100%;
+            display: none;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-between;
+            row-gap: 4rem;
+            overflow: hidden;
 
-            &__mates {
-                height: 100%;
-                max-height: 100%;
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                align-items: end;
-                align-content: space-between;
-
-                @include respond(tab-port) {
-                    grid-template-columns: 1fr;
-                    grid-template-rows: repeat(3, 1fr);
-                }
-
+            @include respond(tab-port) {
+                
             }
- 
+  
             &__mate {
+                width: 50%;
+                height: 50%;
 
                 &__img {
-                    height: 20rem;
-                    width: 20rem;
+                    height: 18rem;
+                    width: 18rem;
                     object-position: top;
                     object-fit: cover;
+
+                    @include respond(tab-land) {
+                        height: 14rem;
+                        width: 14rem;
+                    }
                 }
             }
 
@@ -135,22 +157,50 @@
 //----------------------- PROJECTS section starts here -----------------------------
 
 
-
+.section--projects {
+    padding: 4rem;
+}
 
 //*********************** PROJECTS section ends here ***************************** 
+
+
+
+//----------------------- NEWS section starts here -----------------------------
+
+.section--news {
+    //cointains cards
+    //contains grid
+    @include respond(tab-port) {
+        padding: 0 4rem;
+    }
+
+    
+}
+
+//*********************** NEWS section ends here ***************************** 
+
 
 //----------------------- CONTACT section starts here -----------------------------
 
 
 .section--contact {
     min-height: 80vh;
+
+    @include respond (tab-port) {
+        padding: 0 4rem;
+    }
 }
 
 .contact {
+
     &__info {
         position: absolute;
         bottom:  0;
-        max-width:  30%;
+        max-width:  40%;
+
+        @include respond(tab-land) {
+            max-width: 70%;
+        }
 
 
         &__data {
@@ -158,6 +208,12 @@
 
             &__heading {
                 margin-bottom: 1rem;
+
+                &--country {
+                    margin-bottom: 1rem;
+                    
+                }
+
             }
             
             &__content {
@@ -167,9 +223,11 @@
                 &--adress {
                     display: flex;
                     flex-direction: row;
+                    column-gap: 4rem;
                 }
 
                 &__data {
+                    
                     max-width: 100%;
                 }
                 

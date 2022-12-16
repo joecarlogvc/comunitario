@@ -13,10 +13,7 @@ const navMinbar1 = document.querySelector('.min__bar--1');
 const navMinbar2 = document.querySelector('.min__bar--2');
 const navMinbar3 = document.querySelector('.min__bar--3');
 
-//------------- ABOUT US NAV SELECTORS
-const teamNavElements = document.querySelectorAll(".about__team__element");
-const navAboutTeam = document.querySelector(".about__team__fullteam");
-const navAboutMembers =  document.querySelector(".about__team__members");
+
 
 
 //--------------- MAIN NAV FUNCTIONAILTY
@@ -60,7 +57,7 @@ const showNav = function() {
 }
 
 const hideNav = function() {
-    mainNav.style.height = "15rem";
+    mainNav.style.height = "13rem";
 
     //nav list behavior
     mainNavList.style.opacity = "0";
@@ -114,16 +111,82 @@ mainNavList.addEventListener('click', function(e) {
     }
 })
 
-if (navAboutMembers) {
-    navAboutMembers.addEventListener('click', function() {
-        toggleElementActiveState(teamNavElements, navAboutMembers);
-    });
+
+
+//------------- ABOUT NAV 
+//------------- ABOUT US NAV SELECTORS
+const teamNav = document.querySelector(".about__nav");
+const teamNavEls = document.querySelectorAll(".about__nav__el");
+const aboutTeam = document.querySelector(".about__team__fullteam"); 
+const aboutMembers =  document.querySelector(".about__team__members");
+
+let selectedNavSec = document.querySelector(".active--ns");
+// console.log(selectedNavSec)
+
+const toggleActiveNavSec = function(sel) {
+    teamNavEls.forEach(el => el.classList.remove("active--ns"));
+    //console.log(selected)
+    sel.classList.add('active--ns');
+}
+
+const showAnimation = function(showEl, hidEl) {
+    showEl.style.opacity = "1";
+    showEl.style.zIndex = "2";
+}
+
+const hideAnimation = function(showEl, hidEl) {
+    showEl.style.opacity = "1";
+    showEl.style.zIndex = "2";
+}
+
+const activateStudioView = function(showEl, hideEl) {
+        showEl.style.display = "block";
+        showEl.style.opacity = "1";
+        showEl.style.zIndex = "2";
+
+        hideEl.style.display = "none";
+        hideEl.style.opacity = "0";
+        hideEl.style.zIndex = "1";
+}
+
+const activateMembersView = function(showEl, hideEl) {
+    showEl.style.display = "flex";
+    showEl.style.opacity = "1";
+    showEl.style.zIndex = "2";
+    
+    hideEl.style.display = "none";
+    hideEl.style.opacity = "0";
+    hideEl.style.zIndex = "0";
+}
+
+const initaNavSec = function(sel) {
+    if(sel.classList.contains('about__nav--studio')) {
+        toggleActiveNavSec(sel);
+        activateStudioView(aboutTeam, aboutMembers);
+    } else if(sel.classList.contains('about__nav--partners')) {
+        toggleActiveNavSec(sel);
+        activateMembersView(aboutMembers, aboutTeam);
+    }
+
 }
 
 
-console.log(window.innerWidth)
 
+if(teamNav) {
+    teamNav.addEventListener('click', function(e) {
+               
+        if(e.target.tagName === "SPAN") {
 
+            selectedNavSec = e.target.closest('p');
+            initaNavSec(selectedNavSec);
+        }
+
+        //initaNavSec(selectedNavSec);
+    })
+}
+
+initaNavSec(selectedNavSec);
+//initaNavSec(selectedNavSec);
 
 
 

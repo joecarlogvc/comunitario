@@ -16,6 +16,7 @@
 
     @include respond(tab-port) {
         overflow: hidden;
+        height: 13rem;
     }
 }
 
@@ -62,11 +63,15 @@
     &__menu {
         font-size: 1.3rem;
         font-weight: 500;
-        position: relative;      
-
+        position: relative;
+        
         @include respond(tab-port) {
-            font-size: 1.5rem;
+            font-size: 1.15rem;
         }
+
+        // @include respond(tab-port) {
+        //     font-size: 1.5rem;
+        // }
         
         &__min {
             position: absolute;
@@ -124,12 +129,31 @@
 //About section navigation bar
 #nav-about {
     display: flex;
-    margin-bottom: 1rem;
+    max-width: 50%;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: solid 1px $gray;
+    align-items: baseline;
+
+    @include respond(tab-land) {
+        max-width: 100%;
+    }
 }
 
 .about__nav {
     &__el {
-        margin-right: 4rem;
-        font-size: 1.3rem;
+        &:not(:last-child) {
+            margin-right: 8rem;
+
+            @include respond(tab-port) {
+                margin-right: 4rem;
+            }
+        }
+
+        @include respond(tab-port) {
+
+
+            margin-right: 4rem;
+        }
     }
 }
