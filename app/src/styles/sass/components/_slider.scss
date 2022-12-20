@@ -59,9 +59,6 @@
         transition-duration: 300ms;
         transition-timing-function: ease-in-out; 
 
-        
-
-
         @include respond(tab-port) {
             height: 8rem;
             width: 8rem;
@@ -100,6 +97,10 @@
         &--prev {
             left: 0;
 
+            &--project {
+                left: 5rem;
+            }
+
             @include respond(tab-port) {
                 left: 1rem;
             }
@@ -107,6 +108,10 @@
 
         &--next {
             right: 0;
+
+            &--project {
+                right: 5rem;
+            }
 
             @include respond(tab-port) {
                 right: 1rem;

@@ -2,32 +2,42 @@
     margin-top: 19rem;
     max-width: 100%;
     
-    
-    @include respond(tab-land) {
-        width: 100vw;
+    @include respond(tab-port) {
+        margin-top: 15rem;
     }
 
+   
+
+    //Main container of slider and main info data of the project
     &__hero {
         width: 100%;
         height: 100%;
         display: flex;
         flex-direction: row;
-        margin-bottom: 8rem;
-        
+        margin-bottom: 8rem;       
         
         @include respond(tab-land) {
             flex-direction: column;
         }
+
+        @include respond(tab-port) {
+            margin-bottom: 0;
+        }
         
     }
 
+    //Slider of the project
     &__slider {
-        min-width: 80%;
+        max-width: 80%;
+        width: 85%;
         height: calc(100vh - 19rem);
-        margin-right: 4rem;
+        margin-right: 4rem;        
 
         @include respond(tab-land) {
-            width: 100vw;
+            max-height: calc(100vh - 10rem);
+            height: calc(100vh - 10rem);
+            max-width: 100%;
+            width: 100%;
         }
 
         &__slider {
@@ -36,37 +46,46 @@
         }       
     
         &__image {
-            width: 90%;
+            width: 100%;
             object-fit: contain;
         }
     }
 
-    &__info{
-        max-width: 30%;
-        display: flex;
-        flex-direction: column;
-
-        @include respond(tab-land) {
-            width: 100%;
-            padding: 1rem;
-            flex-direction: row;
-        }
-
-        &__container {
-            width: 100%;
-            height: 100%;
+    &__info {
+        max-height: 100%;
+        @include respond(phone) {
+            margin: 4rem;
         }
     }
-
+    
+    //Text description of the project
     &__description { 
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-direction: row;
+        max-width: 100%;
         gap: 8rem;
+       
+        @include respond(tab-land) {
+            padding-right: 2rem;
+        }
+
+        @include respond(tab-port) {
+            flex-direction: column;
+            gap: 4rem;
+            padding: 4rem;
+        }
 
         &__text {
             text-align: justify;
             font-size: 1.2rem;
-           
         }
+    }
+}
+
+.project__card__info {
+    width: 100% !important;
+
+    @include respond(tab-land) {
+        max-height: 100%;
     }
 }

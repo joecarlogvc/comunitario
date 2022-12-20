@@ -41,18 +41,17 @@
                 width: 100%;
                 height: 100%
             }
-            
 
             &--1 {
                 background-image: url("../src/styles/resources/img/projects/project-1/castello-1.jpg");
             }
 
             &--2 {
-                background-image: url("../src/styles/resources/img/projects/project-2/vc-1.jpg");
+                background-image: url("../src/styles/resources/img/projects/project-3/terram-1.jpg");
             }
 
             &--3 {
-                background-image: url("../src/styles/resources/img/projects/project-3/terram-1.jpg");
+                background-image: url("../src/styles/resources/img/projects/project-2/vc-1.jpg");
             }
 
             &--4 {
@@ -89,8 +88,6 @@
                 flex-direction: column;
                 flex-wrap: wrap;
                 justify-content: space-between;
-
-                
 
                 &--full {
                     gap: 2rem;
@@ -164,9 +161,5 @@
         &__data {
             margin-bottom: 1rem;
         }
-    }
-
-    &__heading {
-        
     }
 }

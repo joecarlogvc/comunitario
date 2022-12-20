@@ -142,6 +142,11 @@
 
 .about__nav {
     &__el {
+
+        &:hover {
+            cursor: pointer;
+        }
+
         &:not(:last-child) {
             margin-right: 8rem;
 
@@ -151,8 +156,6 @@
         }
 
         @include respond(tab-port) {
-
-
             margin-right: 4rem;
         }
     }
