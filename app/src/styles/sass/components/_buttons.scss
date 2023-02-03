@@ -10,10 +10,20 @@
             transform: translateY(-50%);
             background-color: $black;
             z-index: 20;
+            transition-property: height width;
+            transition-duration:  200ms;
+            transition-timing-function: ease;
+
+            &:hover {
+                height: 17rem;
+                width: 3.5rem;
+            }
 
             @include respond(tab-port) {
                 width: 2rem;
             }
+                
+            
         }
     }
 }
@@ -25,6 +35,12 @@
     bottom: 50%;
     left: 50%;
     font-size: 1.3rem;
+    
+    transition: all 200ms ease;
+
+    &:hover {
+        font-size: 1.35rem;
+    }
 }
 
 .button--contact--static > p > a {

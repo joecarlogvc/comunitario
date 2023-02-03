@@ -118,6 +118,11 @@
         }
         
         &__link {
+            transition: all 200ms ease;
+                
+                &:hover {
+                    font-size: 1.35rem;
+                }
             &--en {
                 color: $gray;
             }
@@ -142,7 +147,7 @@
 
 .about__nav {
     &__el {
-
+        z-index: 101;
         &:hover {
             cursor: pointer;
         }
@@ -151,7 +156,7 @@
             margin-right: 8rem;
 
             @include respond(tab-port) {
-                margin-right: 4rem;
+                margin-right: 2rem;
             }
         }
 

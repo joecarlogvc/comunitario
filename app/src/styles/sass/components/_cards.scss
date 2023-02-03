@@ -3,23 +3,22 @@
     flex-direction: row;
     column-gap: 4rem;
     padding: 1rem 0;
-    margin-bottom: 8rem;
+    // margin-bottom: 2rem;
     height: 40vh;
 
     @include respond(tab-port) {
         flex-direction: column;
-        height: 70vh;
-        row-gap: 4rem;
+        height: 60vh;
         
     }
     
     &__img {
         width: 50%;
-       
 
         @include respond(tab-port) {
             width: 100%;
-            height: 40vh;
+            height: 50%;
+            
         }
 
         &__heading {
@@ -28,6 +27,10 @@
             font-weight: 600;
             margin-bottom: 1rem;
             height: 2rem;
+
+            @include respond(tab-port) {   
+                height: 10%
+            }
         }
         
         &__img {
@@ -36,10 +39,15 @@
             background-size: cover;
             width: 100%;
             height: 20rem;
+            transition: filter 150ms ease;
+
+            &:hover {
+                filter: opacity(65%);
+            }
 
             @include respond(tab-port) {
                 width: 100%;
-                height: 100%
+                height: 80%
             }
 
             &--1 {
@@ -67,7 +75,7 @@
 
         @include respond(tab-port) {
             width: 100%;
-            height: 30vh;
+            height: 50%;
         }
 
         &__heading {
@@ -102,6 +110,11 @@
 
             &__link--proy {
                 font-weight: 600;
+                transition: all 200ms ease;
+                
+                &:hover {
+                    font-size: 1.15rem;
+                }
             }
         }
     }
@@ -126,6 +139,11 @@
 
         &--2 {
             background-image: url("../src/styles/resources/img/news/BEE BREEDERS.JPG");
+            transition: filter 150ms ease;
+
+            &:hover {
+                filter: opacity(65%);
+            }
         }
 
         &--3 {
@@ -138,14 +156,29 @@
 
         &--5 {
             background-image: url("../src/styles/resources/img/news/infonavit.JPG");
+            transition: filter 150ms ease;
+
+            &:hover {
+                filter: opacity(65%);
+            }
         }
 
         &--6 {
             background-image: url("../src/styles/resources/img/news/revista infonavit.JPG");
+            transition: filter 150ms ease;
+
+            &:hover {
+                filter: opacity(65%);
+            }
         }
         
         &--7 {
             background-image: url("../src/styles/resources/img/news/SKYHIVE.JPG");
+            transition: filter 150ms ease;
+
+            &:hover {
+                filter: opacity(65%);
+            }
         } 
         
         &--8 {

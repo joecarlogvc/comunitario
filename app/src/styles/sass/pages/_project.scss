@@ -3,7 +3,7 @@
     max-width: 100%;
     
     @include respond(tab-port) {
-        margin-top: 15rem;
+        margin-top: 13rem;
     }
 
    
@@ -34,8 +34,10 @@
         margin-right: 4rem;        
 
         @include respond(tab-land) {
+            // max-height: calc(100vh - 10rem);
+            // height: calc(100vh - 10rem);
             max-height: calc(100vh - 10rem);
-            height: calc(100vh - 10rem);
+            height: calc(50vh - 10rem);
             max-width: 100%;
             width: 100%;
         }

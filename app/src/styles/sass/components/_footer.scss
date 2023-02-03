@@ -9,14 +9,30 @@
     flex-direction: column;
     margin-top: 15rem;
     padding: 3rem 5rem;
-    padding-top: 8rem;
+    padding-top: 15rem;
     overflow: hidden;
+
+    @include respond(tab-port) {
+        padding-top: 10rem;
+    }
+
+    @include respond(phone) {
+        padding-top: 5rem;
+    }
    
     &__logo {
         position: absolute;
-        top: -50%;
+        top: -15%;
         left: 0;
         width: 100%;
+
+        @include respond(tab-port) {
+            top: -10%;
+        }
+
+        @include respond(phone) {
+            top: -7%;
+        }
     }
     
     //footer composed of 3 sections, this applies for contact, hr and copy 
@@ -25,10 +41,6 @@
         margin: 2rem 0;
 
         &--contact {
-            // display: grid;
-            // grid-template-columns: repeat(3, 1fr);
-            // align-items: start;
-            // gap: 20rem;
             width: 100%;
             display: flex;
             flex-direction: row;
@@ -43,9 +55,14 @@
     &__link {
         //link and svg styles
         color: $white !important;
-
-
+        
         & > span {
+            transition: all 200ms ease;
+
+            &:hover {
+                font-size: 1.05rem;
+            }
+
             @include respond(tab-port) {
                 display: none;
             }
@@ -57,6 +74,11 @@
         & > svg {
             
             margin-right: 1rem;
+            transition: all 200ms ease;
+
+            &:hover {
+                font-size: 1.05rem;
+            }
             
             @include respond(phone) {
                 &:not(:last-child) {
@@ -94,11 +116,7 @@
         
 
         &__piece {
-            transition: font-size 250ms ease;
-           
-            &:hover {
-                font-size: 1.05rem;
-            };
+            
 
             &__location {
                 max-width: 15%;
@@ -134,16 +152,23 @@
         width: 100%;
         height: 1px;
         border-radius: 50%;
-        background-color: $gray;
+        background-color: $gray-light;
     };
 
    
 
     //Comunitario property copy
     &__copy {
-        color: $gray;
-        font-size: .7rem;
+        color: $gray-light;
+        font-size: 1rem;
         line-height: 1rem;
+
+        &__copyright {
+
+            &:last-child {
+                margin-top: 1rem;
+            }
+        }
     };
 
     //Developer's info links.

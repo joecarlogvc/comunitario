@@ -11,7 +11,7 @@ const slides = document.querySelectorAll(".slider__slide__alignment");
 
 let currSlide = 0;
 let slideIntervalId;
-const delay = 3000;
+const delay = 4250;
 const maxSlides = slides.length - 1;
 
 
@@ -33,7 +33,7 @@ const prevSlide = function() {
     currSlide === 0 ? currSlide = maxSlides : currSlide--;
 }
 
-//Creates th alignment and the 
+//Creates the alignment and the 
 const initNextSlide = function () {
     nextSlide();
     goToSlide(currSlide);

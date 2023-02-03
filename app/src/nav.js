@@ -16,7 +16,7 @@ const navMinbar3 = document.querySelector('.min__bar--3');
 
 
 
-//--------------- MAIN NAV FUNCTIONAILTY
+//--------------- MAIN NAV FUNCTIONAILTIES
 
 //Adds spaces for the nav hamburguer
 const addLineHeights= function() {
@@ -111,6 +111,9 @@ mainNavList.addEventListener('click', function(e) {
     }
 })
 
+//On scroll functionality 
+
+
 
 
 //------------- ABOUT NAV 
@@ -121,11 +124,10 @@ const aboutTeam = document.querySelector(".about__team__fullteam");
 const aboutMembers =  document.querySelector(".about__team__members");
 
 let selectedNavSec = document.querySelector(".active--ns");
-// console.log(selectedNavSec)
+
 
 const toggleActiveNavSec = function(sel) {
     teamNavEls.forEach(el => el.classList.remove("active--ns"));
-    //console.log(selected)
     sel.classList.add('active--ns');
 }
 
